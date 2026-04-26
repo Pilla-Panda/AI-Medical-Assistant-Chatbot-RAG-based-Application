@@ -185,4 +185,5 @@ Built by Yash Kumar
 Inspired by LangChain, Groq, Pinecone, and FastAPI ecosystems
 
 ##🎉 License
+
 This project is licensed under the MIT License.
