@@ -26,3 +26,13 @@ Retrieved Docs
 RAG Chain (Groq + LangChain)
    ↓
 LLM-generated Answer
+
+## 📚 Features
+Upload medical PDFs (notes, books, etc.)
+Auto-extracts text and splits into semantic chunks
+Embeds using Google / BGE embeddings
+Stores vectors in Pinecone DB
+Uses Groq's LLaMA3-70B via LangChain
+FastAPI backend for file upload and Q&A
+
+
