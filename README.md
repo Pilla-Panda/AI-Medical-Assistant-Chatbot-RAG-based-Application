@@ -1,16 +1,20 @@
 # AI-Medical-Assistant-Chatbot-RAG-based-Application
 This application is a Medical Domain Chatbot built using Retrieval-Augmented Generation (RAG). It allows users to upload their own medical documents (e.g., textbooks, reports), and the system intelligently answers queries by retrieving the most relevant content before generating a final response.
 
-## 🧠 Project Overview
+## 📌 Project Overview
 
-This application is a **Medical Domain Chatbot** built using **Retrieval-Augmented Generation (RAG)**.  
-It allows users to upload their own medical documents (e.g., textbooks, reports), and the system intelligently answers queries by retrieving the most relevant content before generating a final response.
+This project is a **Medical Domain Chatbot** built using **Retrieval-Augmented Generation (RAG)**.  
+It enables users to upload medical documents (e.g., textbooks, reports) and intelligently answers queries by retrieving the most relevant context before generating accurate responses.
 
 ---
 
 ## 🎓 What is RAG?
 
-**RAG (Retrieval-Augmented Generation)** enhances language models by supplying relevant external context from a knowledge base, preventing hallucinations and improving accuracy—especially for factual or specialized domains like **medicine**.
+**RAG (Retrieval-Augmented Generation)** enhances Large Language Models (LLMs) by incorporating external knowledge from a vector database.  
+This approach:
+- Reduces hallucinations  
+- Improves factual accuracy  
+- Performs well in domain-specific areas like **medicine**
 
 ---
 
@@ -25,39 +29,21 @@ Retrieved Docs
    ↓
 RAG Chain (Groq + LangChain)
    ↓
-LLM-generated Answer.
+LLM-generated Answer
 
-📄 For a detailed view, refer to assets/MedicalAssistant.pdf
+----
+````
+##🚀 Features
+📄 Upload medical PDFs (books, notes, reports)
+✂️ Automatic text extraction & semantic chunking
+🧠 Embedding generation using Google / BGE models
+🗄️ Efficient vector storage with Pinecone
+⚡ Fast inference via Groq LLaMA3-70B
+🔗 End-to-end RAG pipeline using LangChain
+🌐 FastAPI backend with REST APIs
+💬 Interactive UI using Streamlit
 
-
-
----
-
-## 🚀 Features
-
-- 📄 Upload medical PDFs (notes, books, reports)
-- ✂️ Automatic text extraction & semantic chunking
-- 🧠 Embeddings using **Google / BGE models**
-- 🗄️ Vector storage with **Pinecone**
-- ⚡ Ultra-fast responses via **Groq LLaMA3-70B**
-- 🔗 LangChain-powered RAG pipeline
-- 🌐 FastAPI backend for scalable APIs
-- 💬 Streamlit UI for interaction
-
----
-
-## 🧰 Tech Stack
-
-<p align="center">
-
-![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green?style=for-the-badge&logo=fastapi)
-![LangChain](https://img.shields.io/badge/LangChain-RAG-orange?style=for-the-badge)
-![Pinecone](https://img.shields.io/badge/Pinecone-VectorDB-purple?style=for-the-badge)
-![Groq](https://img.shields.io/badge/Groq-LLM-black?style=for-the-badge)
-![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-red?style=for-the-badge&logo=streamlit)
-
-</p>
+-----
 
 | Component   | Tech Used |
 |------------|----------|
@@ -68,12 +54,102 @@ LLM-generated Answer.
 | Backend    | FastAPI |
 | Deployment | Render |
 
----
 
-## 📡 API Endpoints
+------
 
-### 🔹 Upload PDFs
-```http
-POST /upload_pdfs/
+##📚 API Endpoints
+POST /upload_pdfs/ --- Upload one or more PDF files
+
+POST /ask/ --- Ask a question --- Form field: `question`
+
+------
+
+##📁 Folder Structure
+
+```text
+assets/
+│── DIABETES.pdf
+│── MedicalAssistant.pdf
+│── medicalAssistant.png
+
+client/
+│── components/
+│   ├── chatUI.py
+│   ├── history_download.py
+│   └── upload.py
+│── utils/
+│   └── api.py
+│── app.py
+│── config.py
+│── requirements.txt
+
+server/
+│── middlewares/
+│   └── exception_handlers.py
+│── modules/
+│   ├── llm.py
+│   ├── load_vectorstore.py
+│   ├── pdf_handlers.py
+│   └── query_handlers.py
+│── routes/
+│   ├── ask_question.py
+│   └── upload_pdfs.py
+│── uploaded_docs/
+│── main.py
+│── logger.py
+│── requirements.txt
+
+````
+
+##⚡ Quick Setup
+
+````text
+# Clone the repo
+$ git clone https://github.com/snsupratim/medicalAssistant.git
+$ cd medicalAssistant/server
+
+# Create virtual env
+$ uv venv
+$ .venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
+$ uv pip install -r requirements.txt
+
+# Set environment variables (.env)
+GOOGLE_API_KEY=...
+GROQ_API_KEY=...
+PINECONE_API_KEY=...
+
+# Run the server
+$ uvicorn main:app --reload --port 8000
 
 
+$ cd medicalAssistant/client
+
+# Create virtual env
+$ uv venv
+$ .venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
+$ uv pip install -r requirements.txt
+
+# Run the server
+$ streamlit run app.py
+
+````
+
+##🌐 Deployment
+Hosted on Render
+
+Configure start command as:
+```text
+uvicorn main:app --host 0.0.0.0 --port 10000
+
+````
+
+##🌟 Credits
+Built by Yash Kumar
+Inspired by LangChain, Groq, Pinecone, and FastAPI ecosystems
+
+##🎉 License
+This project is licensed under the MIT License.
