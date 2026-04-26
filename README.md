@@ -67,38 +67,60 @@ POST /ask/ --- Ask a question --- Form field: `question`
 ##📁 Folder Structure
 
 ```text
-assets/
-│── DIABETES.pdf
-│── MedicalAssistant.pdf
-│── medicalAssistant.png
-
-client/
-│── components/
-│   ├── chatUI.py
-│   ├── history_download.py
-│   └── upload.py
-│── utils/
-│   └── api.py
-│── app.py
-│── config.py
-│── requirements.txt
-
-server/
-│── middlewares/
-│   └── exception_handlers.py
-│── modules/
-│   ├── llm.py
-│   ├── load_vectorstore.py
-│   ├── pdf_handlers.py
-│   └── query_handlers.py
-│── routes/
-│   ├── ask_question.py
-│   └── upload_pdfs.py
-│── uploaded_docs/
-│── main.py
-│── logger.py
-│── requirements.txt
-
+└── 📁assets
+    ├── DIABETES.pdf
+    ├── MedicalAssistant.pdf
+    └── medicalAssistant.png
+└── 📁client
+    └── 📁__pycache__
+        ├── config.cpython-311.pyc
+    └── 📁components
+        └── 📁__pycache__
+            ├── chatUI.cpython-311.pyc
+            ├── history_download.cpython-311.pyc
+            ├── upload.cpython-311.pyc
+        ├── chatUI.py
+        ├── history_download.py
+        ├── upload.py
+    └── 📁utils
+        └── 📁__pycache__
+            ├── api.cpython-311.pyc
+        ├── api.py
+    ├── app.py
+    ├── config.py
+    └── requirements.txt
+└── 📁server
+    └── 📁__pycache__
+        ├── logger.cpython-311.pyc
+        ├── main.cpython-311.pyc
+        ├── test.cpython-311.pyc
+    └── 📁middlewares
+        └── 📁__pycache__
+            ├── exception_handlers.cpython-311.pyc
+        ├── exception_handlers.py
+    └── 📁modules
+        └── 📁__pycache__
+            ├── llm.cpython-311.pyc
+            ├── load_vectorstore.cpython-311.pyc
+            ├── query_handlers.cpython-311.pyc
+        ├── llm.py
+        ├── load_vectorstore.py
+        ├── pdf_handlers.py
+        ├── query_handlers.py
+    └── 📁routes
+        └── 📁__pycache__
+            ├── ask_question.cpython-311.pyc
+            ├── upload_pdfs.cpython-311.pyc
+        ├── ask_question.py
+        ├── upload_pdfs.py
+    └── 📁uploaded_docs
+        ├── DIABETES.pdf
+        ├── Supratim Nag - LOR.pdf
+    ├── .env
+    ├── logger.py
+    ├── main.py
+    ├── requirements.txt
+    └── test.py
 ````
 
 ##⚡ Quick Setup
