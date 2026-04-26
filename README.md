@@ -34,13 +34,21 @@ LLM-generated Answer
 ----
 ````
 ##🚀 Features
+
 📄 Upload medical PDFs (books, notes, reports)
+
 ✂️ Automatic text extraction & semantic chunking
+
 🧠 Embedding generation using Google / BGE models
+
 🗄️ Efficient vector storage with Pinecone
+
 ⚡ Fast inference via Groq LLaMA3-70B
+
 🔗 End-to-end RAG pipeline using LangChain
+
 🌐 FastAPI backend with REST APIs
+
 💬 Interactive UI using Streamlit
 
 -----
@@ -161,6 +169,7 @@ $ streamlit run app.py
 ````
 
 ##🌐 Deployment
+
 Hosted on Render
 
 Configure start command as:
@@ -170,7 +179,9 @@ uvicorn main:app --host 0.0.0.0 --port 10000
 ````
 
 ##🌟 Credits
+
 Built by Yash Kumar
+
 Inspired by LangChain, Groq, Pinecone, and FastAPI ecosystems
 
 ##🎉 License
